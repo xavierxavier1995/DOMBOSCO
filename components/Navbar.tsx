@@ -23,7 +23,9 @@ const Navbar: React.FC = () => {
              <img 
                src="https://drive.google.com/uc?export=view&id=1eX3OfZy7o1LCZNSMoTyftstqdHudPuFm" 
                alt="Colégio Dom Bosco" 
-               className="h-20 w-auto object-contain hover:opacity-90 transition-opacity" 
+               className="h-20 w-auto object-contain hover:opacity-90 transition-opacity"
+               height="80"
+               width="200"
              />
           </a>
 
@@ -51,6 +53,7 @@ const Navbar: React.FC = () => {
             <button
               onClick={toggleMenu}
               className="text-gray-600 hover:text-brand-orange focus:outline-none"
+              aria-label="Abrir menu"
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>

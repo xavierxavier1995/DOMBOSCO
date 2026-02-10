@@ -5,8 +5,8 @@ const Hero: React.FC = () => {
   return (
     <section id="home" className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden">
       {/* Abstract Background Shapes */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl z-0"></div>
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-blue-100 rounded-full blur-3xl z-0"></div>
+      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl z-0 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-blue-100 rounded-full blur-3xl z-0 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -54,10 +54,13 @@ const Hero: React.FC = () => {
           
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white transform rotate-2 hover:rotate-0 transition-transform duration-500">
+              {/* LCP Optimization: fetchPriority high and no lazy loading for Hero image */}
               <img 
                 src="https://picsum.photos/seed/kidslearning/800/600" 
                 alt="Alunos aprendendo em ambiente colaborativo" 
                 className="w-full h-full object-cover"
+                width="800"
+                height="600"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 text-white">
                 <p className="font-bold text-lg">"O aluno não é um número"</p>

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Colégio Dom Bosco Bauru - 20 anos de tradição. Da Educação Infantil ao Fundamental, acolhimento que transforma e resultados que orgulham. Matrículas 2025 abertas.">
     <title>Colégio Dom Bosco Bauru - Acolhimento e Resultados</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -29,22 +30,27 @@
     <style>
       html {
         scroll-behavior: smooth;
-        scroll-padding-top: 5rem; /* 80px para compensar o navbar fixo */
+        scroll-padding-top: 6rem; /* Ajustado para compensar o header */
       }
       body {
         font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
       }
       h1, h2, h3, h4, h5, h6 {
         font-family: 'Fredoka', sans-serif;
       }
+      /* Previne FOUC (Flash of Unstyled Content) */
+      .opacity-0 { opacity: 0; }
     </style>
   <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+    "react": "https://esm.sh/react@18.3.1",
+    "react/": "https://esm.sh/react@18.3.1/",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
+    "react-dom/": "https://esm.sh/react-dom@18.3.1/",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "lucide-react": "https://esm.sh/lucide-react@0.344.0"
   }
 }
 </script>

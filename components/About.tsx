@@ -17,12 +17,18 @@ const About: React.FC = () => {
             <img 
               src="https://picsum.photos/seed/dombosco1/400/500" 
               alt="Ambiente Escolar" 
-              className="rounded-2xl shadow-lg mt-8"
+              className="rounded-2xl shadow-lg mt-8 w-full h-auto"
+              loading="lazy"
+              width="400"
+              height="500"
             />
             <img 
               src="https://picsum.photos/seed/dombosco2/400/500" 
               alt="Atividades Lúdicas" 
-              className="rounded-2xl shadow-lg mb-8"
+              className="rounded-2xl shadow-lg mb-8 w-full h-auto"
+              loading="lazy"
+              width="400"
+              height="500"
             />
           </div>
 

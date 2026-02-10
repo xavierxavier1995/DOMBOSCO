@@ -44,10 +44,13 @@ const Blog: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {posts.map((post) => (
             <article key={post.id} className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full">
-              <div className="h-48 overflow-hidden">
+              <div className="h-48 overflow-hidden bg-gray-200">
                 <img 
                   src={post.image} 
                   alt={post.title} 
+                  loading="lazy"
+                  width="600"
+                  height="400"
                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
                 />
               </div>
