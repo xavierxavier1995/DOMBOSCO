@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
@@ -8,29 +8,51 @@ interface ErrorBoundaryProps {
 
 interface ErrorBoundaryState {
   hasError: boolean;
+  error?: Error;
 }
 
-// Simple Error Boundary to catch render errors
-class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
-  constructor(props: ErrorBoundaryProps) {
-    super(props);
-    this.state = { hasError: false };
+// Error Boundary to catch render errors prevents white screen crashes
+class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  state: ErrorBoundaryState = { hasError: false };
+
+  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
+    return { hasError: true, error };
   }
 
-  static getDerivedStateFromError(error: any): ErrorBoundaryState {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: any, errorInfo: any) {
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error("Uncaught error:", error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{ padding: "20px", textAlign: "center", fontFamily: "sans-serif" }}>
-          <h1>Algo deu errado.</h1>
-          <p>Por favor, recarregue a página.</p>
+        <div style={{ 
+          padding: "40px", 
+          textAlign: "center", 
+          fontFamily: "'Inter', sans-serif",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "100vh"
+        }}>
+          <h1 style={{ color: "#CC5200", marginBottom: "16px" }}>Ops! Algo deu errado.</h1>
+          <p style={{ color: "#4B5563", marginBottom: "24px" }}>Estamos com dificuldade para carregar a página.</p>
+          <button 
+            onClick={() => window.location.reload()}
+            style={{
+              padding: "10px 20px",
+              backgroundColor: "#FF6600",
+              color: "white",
+              border: "none",
+              borderRadius: "8px",
+              cursor: "pointer",
+              fontSize: "16px",
+              fontWeight: "bold"
+            }}
+          >
+            Recarregar Página
+          </button>
         </div>
       );
     }
