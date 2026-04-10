@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client'
 import App from './App';
 
 interface ErrorBoundaryProps {
@@ -26,9 +26,9 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{ 
-          padding: "40px", 
-          textAlign: "center", 
+        <div style={{
+          padding: "40px",
+          textAlign: "center",
           fontFamily: "'Inter', sans-serif",
           display: "flex",
           flexDirection: "column",
@@ -38,7 +38,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
         }}>
           <h1 style={{ color: "#CC5200", marginBottom: "16px" }}>Ops! Algo deu errado.</h1>
           <p style={{ color: "#4B5563", marginBottom: "24px" }}>Estamos com dificuldade para carregar a página.</p>
-          <button 
+          <button
             onClick={() => window.location.reload()}
             style={{
               padding: "10px 20px",
